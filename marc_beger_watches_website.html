@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marc Beger Watches | An- & Verkauf hochwertiger Uhren</title>
+  <meta name="description" content="Marc Beger Watches – seriöser An- und Verkauf hochwertiger Uhren. Transparente Beratung, faire Marktpreise und persönliche Abwicklung." />
+  <style>
+    :root {
+      --bg: #050505;
+      --card: #0e0e0e;
+      --white: #f5f5f2;
+      --muted: #a6a6a6;
+      --navy: #243b6b;
+      --line: rgba(255,255,255,0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background:
+        radial-gradient(circle at top, rgba(36,59,107,0.26), transparent 42%),
+        linear-gradient(180deg, #050505 0%, #090909 100%);
+    }
+
+    .hero {
+      max-width: 980px;
+      width: 100%;
+    }
+
+    .monogram {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(72px, 14vw, 165px);
+      letter-spacing: -18px;
+      margin-bottom: 10px;
+      font-weight: 400;
+    }
+
+    .monogram span:last-child { color: var(--navy); }
+
+    h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 400;
+      letter-spacing: 0.28em;
+      font-size: clamp(31px, 7vw, 78px);
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    .subbrand {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      justify-content: center;
+      margin: 24px 0 42px;
+      color: var(--navy);
+      letter-spacing: 0.42em;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: clamp(16px, 3vw, 29px);
+    }
+
+    .subbrand::before,
+    .subbrand::after {
+      content: "";
+      display: block;
+      width: min(180px, 22vw);
+      height: 1px;
+      background: var(--navy);
+    }
+
+    .claim {
+      max-width: 720px;
+      margin: 0 auto 36px;
+      color: #d7d7d7;
+      font-size: clamp(18px, 2.4vw, 24px);
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: 1px solid var(--line);
+      padding: 14px 22px;
+      border-radius: 999px;
+      color: var(--white);
+      background: rgba(255,255,255,0.04);
+      transition: 0.2s ease;
+      font-weight: 600;
+    }
+
+    .btn.primary {
+      background: var(--white);
+      color: #050505;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,0.4);
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 34px;
+      background: rgba(5,5,5,0.72);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav-logo {
+      font-family: Georgia, 'Times New Roman', serif;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    section {
+      padding: 92px 22px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(32px, 5vw, 54px);
+      font-weight: 400;
+      margin: 0 0 18px;
+    }
+
+    .section-text {
+      color: var(--muted);
+      max-width: 760px;
+      margin-bottom: 38px;
+      font-size: 18px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.025));
+      border: 1px solid var(--line);
+      padding: 28px;
+      border-radius: 22px;
+      min-height: 220px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .card p { color: var(--muted); margin-bottom: 0; }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 34px;
+    }
+
+    .list {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .list li {
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      color: #d1d1d1;
+    }
+
+    .list li:last-child { border-bottom: 0; }
+
+    .contact-box {
+      text-align: center;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 48px 22px;
+      background: radial-gradient(circle at top, rgba(36,59,107,0.18), transparent 44%), var(--card);
+    }
+
+    .contact-box p { color: var(--muted); }
+
+    footer {
+      padding: 34px 22px;
+      color: #777;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 800px) {
+      nav { padding: 14px 18px; }
+      .nav-links { display: none; }
+      .grid, .split { grid-template-columns: 1fr; }
+      .monogram { letter-spacing: -10px; }
+      h1 { letter-spacing: 0.16em; }
+      .subbrand { gap: 16px; letter-spacing: 0.25em; }
+      section { padding: 70px 18px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#top" class="nav-logo">Marc Beger Watches</a>
+    <div class="nav-links">
+      <a href="#ankauf">Ankauf</a>
+      <a href="#verkauf">Verkauf</a>
+      <a href="#about">Über mich</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+  </nav>
+
+  <header id="top">
+    <div class="hero">
+      <div class="monogram"><span>M</span><span>B</span></div>
+      <h1>Marc Beger</h1>
+      <div class="subbrand">Watches</div>
+      <p class="claim">Seriöser An- und Verkauf hochwertiger Uhren mit transparenter Abwicklung, fairen Marktpreisen und persönlichem Kontakt.</p>
+      <div class="buttons">
+        <a class="btn primary" href="mailto:info@marcbegerwatches.de">Kontakt aufnehmen</a>
+        <a class="btn" href="#ankauf">Uhr anbieten</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="ankauf">
+    <div class="container split">
+      <div>
+        <h2 class="section-title">Uhr verkaufen</h2>
+        <p class="section-text">Sie möchten eine hochwertige Uhr verkaufen oder bewerten lassen? Marc Beger Watches prüft Ihr Angebot diskret, transparent und auf Basis aktueller Marktpreise.</p>
+        <a class="btn primary" href="mailto:info@marcbegerwatches.de?subject=Uhr anbieten">Uhr per E-Mail anbieten</a>
+      </div>
+      <div class="panel">
+        <ul class="list">
+          <li>Marke, Modell und Referenznummer senden</li>
+          <li>Fotos von Uhr, Box, Papieren und Zustand beifügen</li>
+          <li>Kurze Einschätzung und Rückmeldung erhalten</li>
+          <li>Persönliche und transparente Abwicklung</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="verkauf">
+    <div class="container">
+      <h2 class="section-title">An- & Verkauf</h2>
+      <p class="section-text">Der Fokus liegt auf ausgewählten Uhren etablierter Marken. Qualität, Zustand, Herkunft und faire Preise stehen im Mittelpunkt.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Ankauf</h3>
+          <p>Ankauf hochwertiger Uhren nach individueller Prüfung und nachvollziehbarer Bewertung.</p>
+        </div>
+        <div class="card">
+          <h3>Verkauf</h3>
+          <p>Ausgewählte Zeitmesser mit transparenter Beschreibung und persönlicher Beratung.</p>
+        </div>
+        <div class="card">
+          <h3>Vermittlung</h3>
+          <p>Diskrete Vermittlung passender Käufer oder Verkäufer über ein wachsendes Netzwerk.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container split">
+      <div class="panel">
+        <h2 class="section-title">Über Marc Beger Watches</h2>
+        <p class="section-text">Marc Beger Watches steht für einen sachlichen, seriösen und transparenten Umgang mit hochwertigen Uhren. Der Anspruch ist ein klarer Prozess, realistische Marktpreise und ein vertrauensvoller Kontakt ohne übertriebene Luxusinszenierung.</p>
+      </div>
+      <div class="panel">
+        <ul class="list">
+          <li>Persönlicher Ansprechpartner</li>
+          <li>Transparente Kommunikation</li>
+          <li>Fokus auf Zustand, Herkunft und Echtheit</li>
+          <li>Seriöser Markenauftritt aus Deutschland</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="container">
+      <div class="contact-box">
+        <h2 class="section-title">Kontakt</h2>
+        <p>Für Anfragen zum Ankauf, Verkauf oder zur Vermittlung hochwertiger Uhren.</p>
+        <p><strong>E-Mail:</strong> <a href="mailto:info@marcbegerwatches.de">info@marcbegerwatches.de</a></p>
+        <p><strong>Instagram:</strong> @marcbegerwatches</p>
+        <br />
+        <a class="btn primary" href="mailto:info@marcbegerwatches.de">Jetzt Kontakt aufnehmen</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© 2026 Marc Beger Watches</div>
+      <div>Impressum · Datenschutz</div>
+    </div>
+  </footer>
+</body>
+</html>
