@@ -77,12 +77,21 @@
       width: 100%;
     }
 
+    .logo-box {
+      background: linear-gradient(180deg, #050505 0%, #101010 100%);
+      border-radius: 32px;
+      padding: 50px 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.12);
+    }
+
     .monogram {
       font-family: Georgia, 'Times New Roman', serif;
       font-size: clamp(72px, 14vw, 165px);
       letter-spacing: -18px;
       margin-bottom: 10px;
       font-weight: 400;
+      color: white;
     }
 
     .monogram span:last-child {
@@ -96,6 +105,7 @@
       font-size: clamp(31px, 7vw, 78px);
       margin: 0;
       text-transform: uppercase;
+      color: white;
     }
 
     .subbrand {
@@ -280,9 +290,11 @@
 
   <header id="top">
     <div class="hero">
-      <div class="monogram"><span>M</span><span>B</span></div>
-      <h1>Marc Beger</h1>
-      <div class="subbrand">Watches</div>
+      <div class="logo-box">
+        <div class="monogram"><span>M</span><span>B</span></div>
+        <h1>Marc Beger</h1>
+        <div class="subbrand">Watches</div>
+      </div>
       <p class="claim">Seriöser An- und Verkauf hochwertiger Uhren mit transparenter Abwicklung, fairen Marktpreisen und persönlichem Kontakt.</p>
       <div class="buttons">
         <a class="btn primary" href="mailto:info@marcbegerwatches.de">Kontakt aufnehmen</a>
